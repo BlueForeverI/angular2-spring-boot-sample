@@ -1,0 +1,28 @@
+<h4>Forms and Inputs</h4>
+
+<form #carForm="ngForm">
+    <div class="form-group">
+        <label for="model">Model</label>
+        <input id="model" type="text" [(ngModel)]="simpleCar.model" 
+            name="model"  pattern="[A-Za-z]+" required />
+    </div>
+
+    <div class="form-group">
+        <label for="color">Color</label>
+        <input id="color" type="text" [(ngModel)]="simpleCar.color" 
+            name="color" pattern="^(red|green|blue)$" required />
+    </div>
+
+    <div class="form-group">
+        <label for="year">Year</label>
+        <input id="year" type="text" [(ngModel)]="simpleCar.year" 
+            name="year" pattern="[0-9]{4}" required />
+    </div>
+</form>
+
+<button (click)="addSimpleCar()" [disabled]="!carForm.valid">Add</button>
+<ul>
+    <li *ngFor="let car of addedCars">
+        {{ car.model }}, {{ car.color }}, {{ car.year }}
+    </li>
+</ul>
