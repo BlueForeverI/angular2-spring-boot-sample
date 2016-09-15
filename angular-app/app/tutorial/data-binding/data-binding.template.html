@@ -1,1 +1,35 @@
 <h4>Data Binding</h4>
+
+<fieldset>
+    <legend>One-way binding</legend>
+    Data Source: <span>{{ oneWayValue }}</span>
+    <br />
+    View: <input type="range" min="1" max="100" [ngModel]="oneWayValue" />
+    <br /> 
+    <button (click)="incrementOneWayValue()">Increment</button>
+</fieldset>
+
+<br />
+<br />
+
+<fieldset>
+    <legend>Two-way binding</legend>
+    Data Source: <span>{{ twoWayValue }}</span>
+    <br />
+    View: <input type="range" min="1" max="100" [(ngModel)]="twoWayValue" />
+    <br /> 
+    <button (click)="incrementTwoWayValue()">Increment</button>
+</fieldset>
+
+<br />
+<br />
+
+<!--<table>
+    <tr>
+        <td>0</td>
+        <td>1</td>
+    <tr>
+    <tr>
+        <td [colspan]="colSpan">2</td>
+    </tr>
+</table>-->

@@ -7,14 +7,14 @@ import { AppComponent } from './app.component';
 
 const appRoutes: Routes = [
   {
-    path: 'main', component: TutorialComponent, pathMatch: "prefix",
+    path: 'tutorial', component: TutorialComponent,
     children: [
       { path: 'templates', component: TemplatesComponent },
       { path: 'data-binding', component: DataBindingComponent },
       { path: '', redirectTo: 'templates', pathMatch: 'full' }
     ]
   },
-  { path: '', redirectTo: 'main', pathMatch: 'full' }
+  { path: '', redirectTo: 'tutorial', pathMatch: 'full' }
 ];
 
 export const appRouting: ModuleWithProviders = RouterModule.forRoot(appRoutes);

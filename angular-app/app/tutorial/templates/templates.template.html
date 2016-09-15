@@ -1,1 +1,17 @@
 <h4>Templates</h4>
+
+<p>This is calculated with an expression: 2 + 2 = {{ 2 + 2 }}</p>
+<p>This is a field from the component: {{ stringField }}</p>
+<p>This is a method call: {{ getMessage() }}</p>
+
+<p>This iterates over an array with *ngFor:</p>
+<ul>
+    <li *ngFor="let n of numbers">
+        {{ n }}
+    </li>
+</ul>
+
+<p [ngClass]="{'bold': isBold}">This is bold if the isBold condition is true</p>
+
+<p>The div below has a width of exactly {{ divSize + 'x' + divSize }} px</p>
+<div [ngStyle]="{'width.px': divSize, 'height.px': divSize, 'background-color': '#ff0000'}"></div>
