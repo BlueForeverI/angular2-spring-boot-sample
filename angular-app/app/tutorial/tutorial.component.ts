@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 
 @Component({
+    moduleId: module.id,
     selector: 'main',
-    templateUrl: "app/tutorial/tutorial.template.html"
+    templateUrl: "./tutorial.template.html"
 })
 export class TutorialComponent { }
