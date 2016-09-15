@@ -1,22 +1,18 @@
 import { ModuleWithProviders } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { MainComponent }  from './modules/main/main.component';
-import { TemplatesComponent } from './modules/main/templates/templates.component';
+import { TutorialComponent } from './tutorial/tutorial.component';
+import { TemplatesComponent } from './tutorial/templates/templates.component';
 import { AppComponent } from './app.component';
 
 const appRoutes: Routes = [
   {
-    path: '', component: AppComponent, pathMatch: 'full', children: [
-      {
-        path: '', redirectTo: 'main'
-      },
-      {
-        path: 'main', component: MainComponent, pathMatch: "prefix",
-        children: [
-          { path: 'templates', component: TemplatesComponent, pathMatch: "prefix" }
-        ]
-      }]
-  }
+    path: 'main', component: TutorialComponent, pathMatch: "prefix",
+    children: [
+      { path: 'templates', component: TemplatesComponent },
+      { path: '', redirectTo: 'templates', pathMatch: 'full' }
+    ]
+  },
+  { path: '', redirectTo: 'main', pathMatch: 'full' }
 ];
 
 export const appRouting: ModuleWithProviders = RouterModule.forRoot(appRoutes);
