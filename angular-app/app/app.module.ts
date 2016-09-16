@@ -7,12 +7,13 @@ import { TutorialComponent } from './tutorial/tutorial.component';
 import { TemplatesComponent } from './tutorial/templates/templates.component';
 import { DataBindingComponent } from './tutorial/data-binding/data-binding.component';
 import { FormsAndInputsComponent } from './tutorial/forms-and-inputs/forms-and-inputs.component';
+import { DependencyInjectionComponent } from './tutorial/dependency-injection/dependency-injection.component';
 import { appRouting } from './app.routing';
 
 @NgModule({
     imports: [BrowserModule, FormsModule, appRouting],
     declarations: [AppComponent, TutorialComponent,
-        TemplatesComponent, DataBindingComponent, FormsAndInputsComponent],
+        TemplatesComponent, DataBindingComponent, FormsAndInputsComponent, DependencyInjectionComponent],
     bootstrap: [AppComponent],
 })
 export class AppModule { }

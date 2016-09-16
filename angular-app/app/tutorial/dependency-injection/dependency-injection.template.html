@@ -1,0 +1,9 @@
+<h4>Dependency Injection</h4>
+<p><strong>This is a message from the service:</strong> {{ message }}</p>
+
+<p><strong>This is some data from the service:</strong></p>
+<ul>
+    <li *ngFor="let car of data">
+        {{ car.model }}, {{ car.color }}, {{ car.year }}
+    </li>
+</ul>
