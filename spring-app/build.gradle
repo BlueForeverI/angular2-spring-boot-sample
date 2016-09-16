@@ -1,0 +1,43 @@
+buildscript {
+	ext {
+		springBootVersion = '1.4.0.RELEASE'
+	}
+	repositories {
+		mavenCentral()
+	}
+	dependencies {
+		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+	}
+}
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'spring-boot'
+
+jar {
+	baseName = 'spring-app'
+	version = '0.0.1-SNAPSHOT'
+}
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+repositories {
+	mavenCentral()
+}
+
+
+dependencies {
+	compile('org.springframework.boot:spring-boot-starter-web'){
+    	exclude module: "spring-boot-starter-tomcat"
+	}
+	compile("org.springframework.boot:spring-boot-starter-jetty")
+	compile("org.springframework.data:spring-data-jpa:1.10.1.RELEASE")
+	compile("org.springframework.data:spring-data-commons:1.12.1.RELEASE")
+	compile("org.springframework:spring-jdbc")
+	compile("org.hibernate:hibernate-core:4.3.11.Final")
+	compile("org.hibernate:hibernate-entitymanager:4.3.11.Final")
+	compile("org.hibernate:hibernate-jpamodelgen:4.3.11.Final")
+	compile("org.hibernate.javax.persistence:hibernate-jpa-2.1-api:1.0.0.Final")
+	compile("javax.el:javax.el-api:2.2.4")
+	compile("mysql:mysql-connector-java:5.1.13")
+}
