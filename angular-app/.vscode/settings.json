@@ -1,8 +1,8 @@
 // Place your settings in this file to overwrite default and user settings.
 {
     "files.exclude": {
-        "**/*.js": true,
-        "**/*.map": true,
-        "**/systemjs.config.js": false
+        
+        "**/*.js": { "when": "$(basename).ts"},
+        "**/*.map": true
     }
 }

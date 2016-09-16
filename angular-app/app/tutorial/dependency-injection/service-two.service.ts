@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Car } from '../../models/car.model';
+import { Car } from '../models/car.model';
 import { ServiceInterface } from './service-interface.service';
 
 @Injectable()

@@ -5,6 +5,10 @@ import { TemplatesComponent } from './tutorial/templates/templates.component';
 import { DataBindingComponent } from './tutorial/data-binding/data-binding.component';
 import { FormsAndInputsComponent } from './tutorial/forms-and-inputs/forms-and-inputs.component';
 import { DependencyInjectionComponent } from './tutorial/dependency-injection/dependency-injection.component';
+import { EmployeesComponent } from './employees-app/employees.component';
+import { EmployeesListComponent } from './employees-app/list/employees-list.component';
+import {EmployeesAddComponent} from './employees-app/add/employees-add.component';
+
 import { AppComponent } from './app.component';
 
 const appRoutes: Routes = [
@@ -13,9 +17,17 @@ const appRoutes: Routes = [
     children: [
       { path: 'templates', component: TemplatesComponent },
       { path: 'data-binding', component: DataBindingComponent },
-      { path: 'forms-inputs', component: FormsAndInputsComponent},
-      { path: 'dependency-injection', component: DependencyInjectionComponent},
+      { path: 'forms-inputs', component: FormsAndInputsComponent },
+      { path: 'dependency-injection', component: DependencyInjectionComponent },
       { path: '', redirectTo: 'templates', pathMatch: 'full' }
+    ]
+  },
+  {
+    path: 'employees', component: EmployeesComponent,
+    children: [
+      { path: 'list', component: EmployeesListComponent },
+      { path: 'add', component: EmployeesAddComponent },
+      { path: '', redirectTo: 'list', pathMatch: 'full' }
     ]
   },
   { path: '', redirectTo: 'tutorial', pathMatch: 'full' }
