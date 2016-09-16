@@ -11,13 +11,14 @@ import { DependencyInjectionComponent } from './tutorial/dependency-injection/de
 import { EmployeesComponent } from './employees-app/employees.component';
 import { EmployeesListComponent } from './employees-app/list/employees-list.component';
 import {EmployeesAddComponent} from './employees-app/add/employees-add.component';
+import {EmployeesViewComponent} from './employees-app/view/employees-view.component';
 import { appRouting } from './app.routing';
 
 @NgModule({
     imports: [BrowserModule, FormsModule, appRouting],
     declarations: [AppComponent, TutorialComponent,
         TemplatesComponent, DataBindingComponent, FormsAndInputsComponent, DependencyInjectionComponent,
-        EmployeesComponent, EmployeesListComponent, EmployeesAddComponent],
+        EmployeesComponent, EmployeesListComponent, EmployeesAddComponent, EmployeesViewComponent],
     bootstrap: [AppComponent],
 })
 export class AppModule { }

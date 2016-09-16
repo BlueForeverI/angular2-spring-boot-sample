@@ -1,1 +1,23 @@
-<h3>List</h3>
+<h3>List all employees</h3>
+
+<table class="employees-table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Salary</th>
+            <th>Department</th>
+            <th></th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr *ngFor="let employee of employees">
+            <td><a [routerLink]="['../view', employee.id]">{{ employee.id }}</a></td>
+            <td>{{ employee.name }}</td>
+            <td>{{ employee.salary }}</td>
+            <td>{{ employee.department ? '' + employee.department.name : '-' }}</td>
+            <td><button (click)="deleteEmployee(employee.id)">Delete</button></td>
+        </tr>
+    </tbody>
+</table>

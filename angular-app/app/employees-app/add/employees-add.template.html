@@ -1,0 +1,36 @@
+<h3>Add an employee</h3>
+
+<form #employeeForm="ngForm" (submit)="addEmployee()">
+    <div class="form-group">
+        <label for="employee-name">Name</label>
+        <input type="text" id="employee-name" name="employee-name" #name="ngModel"
+            [(ngModel)]="employeeToAdd.name" pattern="[A-Za-z]+" required />
+
+        <span [hidden]="!name.dirty || (name.valid && name.dirty)"
+            class="error-message">
+            Invalid name
+        </span>
+    </div>
+
+    <div class="form-group">
+        <label for="employee-salary">Salary</label>
+        <input type="text" id="employee-salary" name="employee-salary"
+            [(ngModel)]="employeeToAdd.salary" pattern="[0-9]+" required #salary="ngModel" />
+
+        <span [hidden]="!salary.dirty || (salary.valid && salary.dirty)"
+            class="error-message">
+            Invalid salary
+        </span>
+    </div>
+
+    <div class="form-group">
+        <label for="employee-department">Department</label>
+        <select id="employee-department" name="employee-department"
+            [(ngModel)]="employeeToAdd.department" required>
+            <option *ngFor="let department of departments"
+                [ngValue]="department">{{ department.name }}</option>
+        </select>
+    </div>
+
+    <button type="submit" [disabled]="!employeeForm.valid">Add</button>
+</form>

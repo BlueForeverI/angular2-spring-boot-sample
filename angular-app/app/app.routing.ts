@@ -8,6 +8,7 @@ import { DependencyInjectionComponent } from './tutorial/dependency-injection/de
 import { EmployeesComponent } from './employees-app/employees.component';
 import { EmployeesListComponent } from './employees-app/list/employees-list.component';
 import {EmployeesAddComponent} from './employees-app/add/employees-add.component';
+import {EmployeesViewComponent} from './employees-app/view/employees-view.component';
 
 import { AppComponent } from './app.component';
 
@@ -27,6 +28,7 @@ const appRoutes: Routes = [
     children: [
       { path: 'list', component: EmployeesListComponent },
       { path: 'add', component: EmployeesAddComponent },
+      { path: 'view/:id', component: EmployeesViewComponent },
       { path: '', redirectTo: 'list', pathMatch: 'full' }
     ]
   },
