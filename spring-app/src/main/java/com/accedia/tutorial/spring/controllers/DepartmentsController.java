@@ -27,18 +27,17 @@ public class DepartmentsController {
 	public List<Department> getAllDepartments() {
 		return this.departmentRepo.findAll();
 	}
-	
+
 	@RequestMapping(value = "", method = RequestMethod.POST)
 	public void addDepartment(@RequestBody Department department) {
 		this.departmentRepo.save(department);
 	}
-	
+
 	@RequestMapping(value = "/min-salary/{minSalary}")
-	public List<Department> getDepartmentsByEmployeeMinSalary(@PathVariable double minSalary){
+	public List<Department> getDepartmentsByEmployeeMinSalary(@PathVariable double minSalary) {
 		return this.departmentRepo.findAllDistinctDepartmentsByEmployeesSalaryGreaterThan(minSalary)
-			.sorted((Department a, Department b) -> {
-				return a.getName().compareTo(b.getName());
-				})
-			.collect(Collectors.toList());
+				.sorted((Department a, Department b) -> {
+					return a.getName().compareTo(b.getName());
+				}).collect(Collectors.toList());
 	}
 }

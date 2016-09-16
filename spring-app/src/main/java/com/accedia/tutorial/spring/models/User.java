@@ -1,14 +1,9 @@
 package com.accedia.tutorial.spring.models;
 
-import javax.persistence.Entity;
-import javax.persistence.Table;
-
 /**
  * @author georgi.yolovski
  *
  */
-@Entity
-@Table(name = "users")
 public class User {
 	private long userId;
 

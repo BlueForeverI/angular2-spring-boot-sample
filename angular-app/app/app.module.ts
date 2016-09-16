@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
+import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { TutorialComponent } from './tutorial/tutorial.component';
@@ -15,7 +16,7 @@ import {EmployeesViewComponent} from './employees-app/view/employees-view.compon
 import { appRouting } from './app.routing';
 
 @NgModule({
-    imports: [BrowserModule, FormsModule, appRouting],
+    imports: [BrowserModule, FormsModule, HttpModule, appRouting],
     declarations: [AppComponent, TutorialComponent,
         TemplatesComponent, DataBindingComponent, FormsAndInputsComponent, DependencyInjectionComponent,
         EmployeesComponent, EmployeesListComponent, EmployeesAddComponent, EmployeesViewComponent],

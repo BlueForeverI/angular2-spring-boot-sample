@@ -22,7 +22,7 @@ export abstract class EmployeesServiceInterface {
         return null;
     }
 
-    deleteEmployeeById(id: number): Observable<boolean> {
+    deleteEmployeeById(id: number): Observable<void> {
         return null;
     }
 }
