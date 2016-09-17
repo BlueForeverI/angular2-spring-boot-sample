@@ -9,7 +9,7 @@ import { Component } from '@angular/core';
 export class TemplatesComponent { 
     private stringField: string = "A simple string field";
     private numbers: number[] = [0, 4, 8, 155, 22];
-    private isBold: boolean = true;
+    private isBold: boolean = false;
     private divSize: number = 200;
 
     private getMessage():string {

@@ -31,6 +31,14 @@ public class Department {
 	@OneToMany(fetch = FetchType.EAGER, mappedBy = "department")
 	@JsonIgnore
 	private List<Employee> employees;
+	
+	public Department(){
+		
+	}
+
+	public Department(String name) {
+		this.name = name;
+	}
 
 	public long getId() {
 		return id;

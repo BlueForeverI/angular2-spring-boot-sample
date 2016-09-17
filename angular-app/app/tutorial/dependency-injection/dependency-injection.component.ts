@@ -9,7 +9,7 @@ import { ServiceInterface } from './service-interface.service';
     moduleId: module.id,
     selector: 'dependency-injection',
     templateUrl: './dependency-injection.template.html',
-    providers: [{ provide: ServiceInterface, useClass: ServiceOne }]
+    providers: [{ provide: ServiceInterface, useClass: ServiceTwo }]
 })
 export class DependencyInjectionComponent {
     private message: string = "Will be overriden";

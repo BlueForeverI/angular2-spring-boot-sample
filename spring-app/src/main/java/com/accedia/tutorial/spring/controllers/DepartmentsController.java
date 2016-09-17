@@ -1,7 +1,6 @@
 package com.accedia.tutorial.spring.controllers;
 
 import java.util.List;
-import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -24,7 +23,7 @@ public class DepartmentsController {
 	private DepartmentRepository departmentRepo;
 
 	@RequestMapping(value = "", method = RequestMethod.GET)
-	public List<Department> getAllDepartments() {
+	public Iterable<Department> getAllDepartments() {
 		return this.departmentRepo.findAll();
 	}
 
@@ -35,9 +34,9 @@ public class DepartmentsController {
 
 	@RequestMapping(value = "/min-salary/{minSalary}")
 	public List<Department> getDepartmentsByEmployeeMinSalary(@PathVariable double minSalary) {
-		return this.departmentRepo.findAllDistinctDepartmentsByEmployeesSalaryGreaterThan(minSalary)
-				.sorted((Department a, Department b) -> {
-					return a.getName().compareTo(b.getName());
-				}).collect(Collectors.toList());
+
+		
+		// how????
+		return this.departmentRepo.findAllDistinctDepartmentsByEmployeesSalaryGreaterThanOrderByName(minSalary);
 	}
 }

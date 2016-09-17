@@ -32,7 +32,7 @@ const appRoutes: Routes = [
       { path: '', redirectTo: 'list', pathMatch: 'full' }
     ]
   },
-  { path: '', redirectTo: 'tutorial', pathMatch: 'full' }
+  { path: '', redirectTo: 'employees', pathMatch: 'full' }
 ];
 
 export const appRouting: ModuleWithProviders = RouterModule.forRoot(appRoutes);
